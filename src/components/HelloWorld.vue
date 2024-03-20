@@ -55,33 +55,117 @@
           <li>Uso de Firebase para el backend</li>
           <li>Trabajo en equipo en un entorno de desarrollo ágil</li>
           <li>Manejo de herramientas ofimaticas</li>
+          <li></li>
         </ul>
       </div>
     </section>
+
     <section>
-      <h2>Estudios</h2>
-      <p>info</p>
-    </section>
-    <section>
-      <h2> Habilidades</h2>
-      <p>info</p>
-    </section>
-    <section id="projects">
-      <h2>Mis proyectos</h2>
-      <p>Ifo</p>
-    </section>
-    <section id="contact">
-      <h2>Contacto</h2>
-      <p>Ifo</p>
-    </section>
+      <section>
+  <h2> Habilidades</h2>
+  <div class="experience-card">
+    <div class="container-logos"></div>
+    <div class="row">
+      <div class="col-lg-4" v-for="(logo, index) in logos" :key="index">
+        <div class="card mb-3 logo-card">
+          <div class="card-body">
+            <img :src="`/logos/${logo}`" class="logo-img">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
+</section>
+
+    <section>
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Estudios</h2>
+          <div class="card mb-3" style="background-color: #2a2f4a;">
+            <div class="card-body">
+              <h5 class="card-title">Analista y Desarrollo de Sistemas de Información - SENA</h5>
+              <p class="card-text">Actualmente cursando este programa de formación en el SENA. He adquirido habilidades en...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h2>Mis proyectos</h2>
+          <div class="card mb-3" style="background-color: #2a2f4a;">
+            <div class="card-body">
+              <h5 class="card-title">Analista y Desarrollo de Sistemas de Información - SENA</h5>
+              <p class="card-text">Actualmente cursando este programa de formación en el SENA. He adquirido habilidades en...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <div class="contact-section" style="background-color: #1c2030; color: #e5e5e5;">
+    <div class="container">
+      <h2 class="section-title">Contáctame</h2>
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <a href="mailto:tu_correo@ejemplo.com" target="_blank">
+            <i class="fas fa-envelope fa-2x"></i>
+            <p>Correo</p>
+          </a>
+        </div>
+        <div class="col-auto">
+          <a href="https://www.linkedin.com/in/tu_usuario/" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i>
+            <p>LinkedIn</p>
+          </a>
+        </div>
+        <div class="col-auto">
+          <a href="https://github.com/tu_usuario" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+        <div class="col-auto">
+          <a href="https://wa.me/tu_numero" target="_blank">
+            <i class="fab fa-whatsapp fa-2x"></i>
+            <p>WhatsApp</p>
+          </a>
+        </div>
+      </div>
+  </div>
+  </div>
+</div>
+
 </template>
 
-<script>
+<script setup>
 
+import { ref } from 'vue';
+
+const logos = ref([
+  'Boostrap.png',
+  'css.png',
+  'Firebase.png',
+  'html.png',
+  'JavaScript.png',
+  'node.png',
+  'Vue.png',
+]);
 </script>
 
 <style scoped>
+
+.logo-card {
+  height: 100px; /* Ajusta esto al tamaño que prefieras */
+
+}
+
+.logo-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
 .app {
   background-color: #1c2030;
 }
@@ -136,6 +220,8 @@
   flex-direction: row;
   color: #f3f3f3;
 }
+
+
 .iconos i {
   margin: 0 5px; 
 }
@@ -153,6 +239,7 @@ h4 {
 p {
   color: #f3f3f3;
 }
+
 
 .experience-card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -184,4 +271,29 @@ p {
   line-height: 1.5;
 }
 
+
+.contact-section {
+  padding: 60px 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.5em;
+}
+
+a {
+  color: #e5e5e5;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+a:hover {
+  color: #e5e5e5;
+}
+
+i {
+  margin-bottom: 10px;
+}
 </style>
